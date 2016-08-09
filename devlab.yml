@@ -1,0 +1,18 @@
+from: node:6.2.0
+services:
+  - elasticsearch:latest:
+        name: elasticsearch
+        persist: false
+        expose:
+          - 9200:9200
+expose:
+  - 3000:3000
+env:
+  - LOCAL_HOME=${HOME}
+quiet: false
+forward: true
+tasks:
+  env: env
+  install: npm install
+  test: npm test
+  start: npm start
