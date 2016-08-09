@@ -11,6 +11,7 @@ env:
   - LOCAL_HOME=${HOME}
 quiet: false
 forward: true
+before-task: sleep 7 # Necessary for elasticSearch boot
 tasks:
   env: env
   install: npm install
