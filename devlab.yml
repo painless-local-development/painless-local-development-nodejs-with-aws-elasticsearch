@@ -5,7 +5,7 @@ services:
         persist: false
         expose:
           - 9200:9200
-        exec: sleep 7; # Necessary for elasticSearch boot
+        exec: sleep 7 # Necessary for elasticSearch boot
 expose:
   - 3000:3000
 env:
