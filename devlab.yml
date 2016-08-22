@@ -1,17 +1,17 @@
-from: node:6.2.0
+from: mhart/alpine-node:6.2
 services:
   - elasticsearch:latest:
         name: elasticsearch
         persist: false
         expose:
           - 9200:9200
+        exec: sleep 7; # Necessary for elasticSearch boot
 expose:
   - 3000:3000
 env:
   - LOCAL_HOME=${HOME}
 quiet: false
 forward: true
-before-task: sleep 7 # Necessary for elasticSearch boot
 tasks:
   env: env
   install: npm install
